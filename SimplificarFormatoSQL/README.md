@@ -1,0 +1,1 @@
+#Simplificar formato de SQL
