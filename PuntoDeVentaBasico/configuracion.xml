@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conf name="angel">
+	<actualizacion>
+		<!-- 1=true 0=false-->
+		<verificar>1</verificar>
+	</actualizacion>
+	<producto prefijo="$" sufijo="MXN">
+		<!--Tiempo de verficacion de existencia en segundos-->
+		<verificarExistencia>60</verificarExistencia>
+	</producto>
+</conf>
