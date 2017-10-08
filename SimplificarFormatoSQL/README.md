@@ -1,1 +1,1 @@
-#Simplificar formato de SQL
+# Simplificar formato de SQL
