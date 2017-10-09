@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package formatosql;
 
 import java.io.BufferedReader;
@@ -11,39 +7,39 @@ import java.io.FileReader;
 
 /**
  *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author Ramirez Urrutia Angel <abinanye@hotmail.com>
  */
 public class FormatoSQL {
 
     public String formato(File f){
         String str="";
         try {
-            FileReader fr=new FileReader(f);
-            BufferedReader br=new BufferedReader(fr);
-            String ln;
-            String aux="";
-            while((ln=br.readLine())!=null){
+            FileReader fileReader=new FileReader(f);
+            BufferedReader bufferedReader=new BufferedReader(fileReader);
+            String linea;
+            String auxiliar="";
+            while((linea=bufferedReader.readLine())!=null){
                 int i;
-                for(i=0;i<ln.length() && ln.charAt(i)==' ';i++);
+                for(i=0;i<linea.length() && linea.charAt(i)==' ';i++);
                 
                 int inicio=i;
-                for(;i<ln.length() && ln.charAt(i)!=' ';i++);
+                for(;i<linea.length() && linea.charAt(i)!=' ';i++);
                 int fin=i;
                 
-                if(listaNegra(ln.substring(inicio, fin))){
-                    if("ENGINE".equalsIgnoreCase(ln.substring(inicio, fin))){
+                if(listaNegra(linea.substring(inicio, fin))){
+                    if("ENGINE".equalsIgnoreCase(linea.substring(inicio, fin))){
                        
-                        if(aux.charAt(aux.length()-3)==',' || aux.charAt(aux.length()-3)==')'){
-                            aux=aux.substring(0, aux.length()-3);
+                        if(auxiliar.charAt(auxiliar.length()-3)==',' || auxiliar.charAt(auxiliar.length()-3)==')'){
+                            auxiliar=auxiliar.substring(0, auxiliar.length()-3);
                         }
-                        aux+=") ";
+                        auxiliar+=") ";
                     }
-                    aux+=ln+"\n\r";
+                    auxiliar+=linea+"\n\r";
                 }
                 
             }
-            fr.close();
-            str=aux;
+            fileReader.close();
+            str=auxiliar;
         
         } catch (Exception e) {
             System.out.println("Error "+e.getMessage());

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//Este programa permite simplificar el código que nos proporciona Workbeanch
 package formatosql;
 
 import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
@@ -21,13 +17,10 @@ import javax.swing.text.StyleContext;
 
 /**
  *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author Ramirez Urrutia Angel Abinadi <abinanye@hotmail.com>
  */
 public class HOME extends javax.swing.JFrame {
 
-    /**
-     * Creates new form HOME
-     */
     public HOME() {
         initComponents();
         JFileChooser jfc=new JFileChooser();
@@ -43,7 +36,7 @@ public class HOME extends javax.swing.JFrame {
             DefaultStyledDocument styledDocument = new DefaultStyledDocument(styleContext);
             styledDocument.insertString(0, str, null);
 
-// Define el estilo
+            // Permite dar estilo al texto a mostrar.
             Style negro = styleContext.addStyle("ConstantWidth", null);
             StyleConstants.setForeground(negro, Color.BLACK);
             
@@ -295,8 +288,8 @@ public class HOME extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void tamnioFuenteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tamnioFuenteKeyTyped
-        char car = evt.getKeyChar();
-        if(car<'0' || car > '9' || tamnioFuente.getText().length()>1) evt.consume();
+        char caracter = evt.getKeyChar();
+        if(caracter<'0' || caracter > '9' || tamnioFuente.getText().length()>1) evt.consume();
     }//GEN-LAST:event_tamnioFuenteKeyTyped
 
     private void tamnioFuenteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tamnioFuenteKeyReleased
